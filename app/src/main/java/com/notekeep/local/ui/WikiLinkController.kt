@@ -175,10 +175,10 @@ class WikiLinkController(
             return paint.measureText(title).toInt()
         }
 
-        override fun draw(canvas: Canvas, text: CharSequence, start: Int, end: Int, x: Float, y: Float, top: Int, bottom: Int, paint: Paint) {
+        override fun draw(canvas: Canvas, text: CharSequence, start: Int, end: Int, x: Float, top: Int, y: Int, bottom: Int, paint: Paint) {
             val original = paint.color
             paint.color = color
-            canvas.drawText(title, x, y, paint)
+            canvas.drawText(title, x, y.toFloat(), paint)
             paint.color = original
         }
     }
